@@ -11,4 +11,4 @@ spec:
    accessModes: 
     - ReadWriteOnce
    hostPath:
-     path: "/mnt/sdr/data"
+     path: "/var/www/html"
