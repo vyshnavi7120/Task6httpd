@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: httpd_deploy
+    name: httpd-deploy
     labels:
       app: httpd
 spec:
@@ -11,21 +11,21 @@ spec:
         app: httpd
     template:
       metadata:
-        name: mywebserver
+        name: my-webserver
         labels:
           app: httpd
       spec:
         volumes:
-          - name: httpd_data
+          - name: httpd-data
             persistentVolumeClaim:
               claimName: httpd-pvc
         containers:
           - name: httpd-con
-            image: vimal13/apache-webserver-php
+            image: httpd:latest
             imagePullPolicy: IfNotPresent
             ports:
               - containerPort: 80
-                name: "webserver"
+                name: "web-server"
             volumeMounts:
               - mountPath: "/var/www/html"
                 name: httpd-data
