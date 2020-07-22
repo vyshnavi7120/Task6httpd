@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: "pvc_httpd"
+  name: "httpd-pvc"
   labels:
-    name: "httpd_vol"
+    name: "httpd-volume"
 spec:
   storageClassName: manual
   accessModes:
