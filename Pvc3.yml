@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "pvc_httpd"
+  labels:
+    name: "httpd_vol"
+spec:
+  storageClassName: manual
+  accessModes:
+   - ReadWriteOnce
+  resources:
+     requests:
+       storage: 1Gi
